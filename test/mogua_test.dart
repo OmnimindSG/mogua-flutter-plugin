@@ -9,7 +9,15 @@ class MockMoguaPlatform
     implements MoguaPlatform {
 
   @override
-  Future<String?> getPlatformVersion() => Future.value('42');
+  Future<void> init({required String appKey, required bool allowClipboardAccess}) async {
+    return;
+  }
+
+  @override
+  Future<Map<String, dynamic>> getData() async {
+    return {};
+  }
+
 }
 
 void main() {
@@ -19,11 +27,12 @@ void main() {
     expect(initialPlatform, isInstanceOf<MethodChannelMogua>());
   });
 
-  test('getPlatformVersion', () async {
-    Mogua moguaPlugin = Mogua();
+  // Check this: https://docs.flutter.dev/testing/plugins-in-tests
+
+  test('getData', () async {
     MockMoguaPlatform fakePlatform = MockMoguaPlatform();
     MoguaPlatform.instance = fakePlatform;
 
-    expect(await moguaPlugin.getPlatformVersion(), '42');
+    expect(await Mogua.getData(), isInstanceOf<Map>());
   });
 }

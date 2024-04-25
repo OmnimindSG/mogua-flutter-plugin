@@ -5,17 +5,18 @@
 Pod::Spec.new do |s|
   s.name             = 'mogua'
   s.version          = '0.0.1'
-  s.summary          = 'A new Flutter plugin project.'
+  s.summary          = 'Web to App Parameter Passing Solution.'
   s.description      = <<-DESC
-A new Flutter plugin project.
+Our SDK tracks the parameters of app download links sent via text, email, QR codes, and affiliate pages, enabling precise attribution from download to app launch.
                        DESC
-  s.homepage         = 'http://example.com'
+  s.homepage         = 'https://www.mogua.io'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Your Company' => 'email@example.com' }
+  s.author           = { 'Omnimind' => 'omnimind.sg@gmail.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
+  s.dependency 'MoguaSDK', '~> 0.4.4'
   s.platform = :ios, '11.0'
 
   # Flutter.framework does not contain a i386 slice.

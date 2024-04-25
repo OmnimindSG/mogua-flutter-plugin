@@ -23,7 +23,11 @@ abstract class MoguaPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getPlatformVersion() {
-    throw UnimplementedError('platformVersion() has not been implemented.');
+  Future<void> init({ required String appKey, required bool allowClipboardAccess }) {
+    throw UnimplementedError('Method init has not been implemented.');
+  }
+
+  Future<Map<String, dynamic>> getData() {
+    throw UnimplementedError('Method getData has not been implemented.');
   }
 }

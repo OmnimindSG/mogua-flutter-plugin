@@ -10,8 +10,18 @@ class MethodChannelMogua extends MoguaPlatform {
   final methodChannel = const MethodChannel('mogua');
 
   @override
-  Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
-    return version;
+  Future<void> init({ required String appKey, bool allowClipboardAccess = true }) {
+    final arguments = <String, dynamic>{ 'appKey': appKey, 'allowClipboardAccess': allowClipboardAccess };
+    return methodChannel.invokeMethod('init', arguments);
+  }
+
+  @override
+  Future<Map<String, dynamic>> getData() async {
+    try {
+      final map = await methodChannel.invokeMethod('getData');
+      return Map.from(map ?? {});
+    } catch (error) {
+      return Future.error(error);
+    }
   }
 }

@@ -45,10 +45,17 @@ android {
     testOptions {
         unitTests.all {
             testLogging {
-               events "passed", "skipped", "failed", "standardOut", "standardError"
-               outputs.upToDateWhen {false}
-               showStandardStreams = true
+                events "passed", "skipped", "failed", "standardOut", "standardError"
+                outputs.upToDateWhen {false}
+                showStandardStreams = true
             }
         }
     }
+}
+
+dependencies {
+
+    implementation 'sg.omnimind.mogua:mogua-android-sdk:0.4.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+
 }

@@ -1,5 +1,5 @@
 name: mogua
-description: Web to App Parameter Passing Solution.
+description: Web to App Parameter Passing Solution. A lightweight deferred deep linking SDK to track your app's installations from webpages.
 version: 0.4.0
 homepage: https://www.mogua.io
 repository: https://github.com/OmnimindSG/mogua-flutter-plugin

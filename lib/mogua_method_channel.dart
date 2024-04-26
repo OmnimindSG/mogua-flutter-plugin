@@ -10,8 +10,12 @@ class MethodChannelMogua extends MoguaPlatform {
   final methodChannel = const MethodChannel('mogua');
 
   @override
-  Future<void> init({ required String appKey, bool allowClipboardAccess = true }) {
-    final arguments = <String, dynamic>{ 'appKey': appKey, 'allowClipboardAccess': allowClipboardAccess };
+  Future<void> init(
+      {required String appKey, bool allowClipboardAccess = true}) {
+    final arguments = <String, dynamic>{
+      'appKey': appKey,
+      'allowClipboardAccess': allowClipboardAccess
+    };
     return methodChannel.invokeMethod('init', arguments);
   }
 

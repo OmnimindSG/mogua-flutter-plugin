@@ -16,6 +16,7 @@ Our SDK tracks the parameters of app download links sent via text, email, QR cod
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
+  # The dependency's version and the s.version should be increased at the same time, to make sure that the pod will be publish properly.
   s.dependency 'MoguaSDK', '~> 0.4.4'
   s.platform = :ios, '11.0'
 

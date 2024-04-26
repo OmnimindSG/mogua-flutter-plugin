@@ -23,7 +23,8 @@ abstract class MoguaPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<void> init({ required String appKey, required bool allowClipboardAccess }) {
+  Future<void> init(
+      {required String appKey, required bool allowClipboardAccess}) {
     throw UnimplementedError('Method init has not been implemented.');
   }
 

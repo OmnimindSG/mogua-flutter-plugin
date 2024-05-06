@@ -31,7 +31,7 @@ Alternatively, in the `dependencies:` section of your `pubspec.yaml`, add:
 ```yaml
 dependencies:
   # ...
-  mogua: 0.4.0
+  mogua: 0.4.2
 
 ```
 

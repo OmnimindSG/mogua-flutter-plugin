@@ -4,10 +4,10 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'mogua'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'Web to App Parameter Passing Solution.'
   s.description      = <<-DESC
-Our SDK tracks the parameters of app download links sent via text, email, QR codes, and affiliate pages, enabling precise attribution from download to app launch.
+Web to App Parameter Passing Solution. A lightweight deferred deep linking SDK to track your app's installations from webpages.
                        DESC
   s.homepage         = 'https://www.mogua.io'
   s.license          = { :file => '../LICENSE' }
@@ -18,6 +18,7 @@ Our SDK tracks the parameters of app download links sent via text, email, QR cod
   s.dependency 'Flutter'
   # The dependency's version and the s.version should be increased at the same time, to make sure that the pod will be publish properly.
   s.dependency 'MoguaSDK', '~> 0.4.4'
+  s.static_framework = true
   s.platform = :ios, '11.0'
 
   # Flutter.framework does not contain a i386 slice.

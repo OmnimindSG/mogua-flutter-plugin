@@ -54,7 +54,7 @@ After initialization, you can asynchronously retrieve the parameters carried dur
 // Retrieves data from the Mogua platform.
 // This data is cached, ensuring identical return values for subsequent calls to [getData].
 
-final data = Mogua.getData();
+final data = await Mogua.getData();
 final channel = data['channel'];
 final referrer = data['referrer'];
 ```

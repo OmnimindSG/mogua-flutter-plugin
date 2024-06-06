@@ -22,12 +22,14 @@ Try our [live demo](https://www.mogua.io/live-demo) in 10 seconds!
 
 Through the command line:
 
+[//]: # (target="Command Line")
 ```sh
 dart pub add mogua
 ```
 
 Alternatively, in the `dependencies:` section of your `pubspec.yaml`, add:
 
+[//]: # (language="Yaml", target="pubspec.yaml")
 ```yaml
 dependencies:
   # ...
@@ -39,6 +41,7 @@ dependencies:
 
 You need to initialize the SDK before any usage.
 
+[//]: # (language="Dart", target="Example")
 ```dart
 // appKey: You can find it on the mogua.io dashboard.
 // allowPasteboardAccess: Whether to allow access to the clipboard. Enabling this feature can enhance accuracy, but may trigger permission warnings.
@@ -50,6 +53,7 @@ Mogua.init(appKey: 'app-key', allowClipboardAccess: true);
 
 After initialization, you can asynchronously retrieve the parameters carried during installation (eg. Submit from landing pages).
 
+[//]: # (language="Dart", target="Example")
 ```dart
 // Retrieves data from the Mogua platform.
 // This data is cached, ensuring identical return values for subsequent calls to [getData].

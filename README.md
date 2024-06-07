@@ -46,7 +46,7 @@ You need to initialize the SDK before any usage.
 // appKey: You can find it on the mogua.io dashboard.
 // allowPasteboardAccess: Whether to allow access to the clipboard. Enabling this feature can enhance accuracy, but may trigger permission warnings.
 
-Mogua.init(appKey: 'app-key', allowClipboardAccess: true);
+Mogua.init(appKey: '${appKey}', allowClipboardAccess: true);
 ```
 
 ## Retrieve the parameters

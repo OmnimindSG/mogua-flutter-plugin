@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'mogua'
-  s.version          = '0.0.2'
+  s.version          = '0.8.0'
   s.summary          = 'Web to App Parameter Passing Solution.'
   s.description      = <<-DESC
 Web to App Parameter Passing Solution. A lightweight deferred deep linking SDK to track your app's installations from webpages.
@@ -17,7 +17,7 @@ Web to App Parameter Passing Solution. A lightweight deferred deep linking SDK t
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
   # The dependency's version and the s.version should be increased at the same time, to make sure that the pod will be publish properly.
-  s.dependency 'MoguaSDK', '~> 0.4.4'
+  s.dependency 'MoguaSDK', '~> 0.8.0'
   s.static_framework = true
   s.platform = :ios, '11.0'
 

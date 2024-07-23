@@ -1,24 +1,27 @@
 [//]: # (redundant)
 ![image](https://www.mogua.io/images/mogua_logo_en.png)
 
-[//]: # (redundant)
-# Mogua Flutter
+## Mogua Flutter Plugin
 
 [![Pub Package](https://img.shields.io/pub/v/mogua.svg)](https://pub.dev/packages/mogua)
 
 Mogua is a web to app parameter passing solution. It allows you to track your app's installations from landing page with a lightweight deferred deep linking SDK.
 
-Try our [live demo](https://www.mogua.io/live-demo) in 10 seconds!
+Try our [live demo](https://www.mogua.io) in 10 seconds!
 
-## Features
+---
 
-- SDK to track your apps’ installation
-- Create unlimited custom parameters
+### Features
+
+- Track your apps’ installation (Deferred Deep Linking)
+- Track your apps’ opening events (e.g., from URL Scheme, Universal Link, App Links)
+- Pass parameters via deep links
 - Parameter analytics
 - App trending analytics
 
+---
 
-## Installation
+### Install the plugin
 
 Through the command line:
 
@@ -26,6 +29,7 @@ Through the command line:
 ```sh
 dart pub add mogua
 ```
+&nbsp;  
 
 Alternatively, in the `dependencies:` section of your `pubspec.yaml`, add:
 
@@ -33,38 +37,76 @@ Alternatively, in the `dependencies:` section of your `pubspec.yaml`, add:
 ```yaml
 dependencies:
   # ...
-  mogua: 0.4.2
+  mogua: ^0.8.0
 
 ```
+&nbsp;  
 
-## Initialize the SDK
+---
 
-You need to initialize the SDK before any usage.
+### Initialize the plugin
+
+You need to initialize the plugin before any usage.
+
+The `init` method returns a `Future` to indicate whether the initialization is complete.
 
 [//]: # (language="Dart", target="Example")
 ```dart
-// appKey: You can find it on the mogua.io dashboard.
-// allowPasteboardAccess: Whether to allow access to the clipboard. Enabling this feature can enhance accuracy, but may trigger permission warnings.
+import 'package:mogua/mogua.dart';
 
-Mogua.init(appKey: '${appKey}', allowClipboardAccess: true);
+// appKey: The App Key associated with this application, you can find it on the mogua.io dashboard.
+// allowPasteboardAccess: Whether to allow access to the clipboard. Enabling this feature can enhance accuracy, but may trigger permission warnings on certain systems.
+
+Mogua.init(appKey: '${appKey}', allowClipboardAccess: true).then((_) {
+  // You can retrieve data such as channel, referrals, etc.
+});
 ```
+&nbsp;  
 
-## Retrieve the parameters
+---
 
-After initialization, you can asynchronously retrieve the parameters carried during installation (eg. Submit from landing pages).
+### Retrieve the params
+
+ Before retrieving the params, refer to the **[How to collect params on website](https://www.mogua.io/docs/integration/params-collect)**.
+
+#### Get params during app installation (Deferred Deep Linking)
+
+After initialization, you can asynchronously retrieve the parameters passed during installation (eg. submissions from landing pages):
 
 [//]: # (language="Dart", target="Example")
 ```dart
-// Retrieves data from the Mogua platform.
-// This data is cached, ensuring identical return values for subsequent calls to [getData].
-
-final data = await Mogua.getData();
-final channel = data['channel'];
-final referrer = data['referrer'];
+Mogua.getInstallData().then((data) {
+  // data: Parameters passed from the web to the app.
+    // Returns an empty Map if no parameters are provided.
+    // Parameters are cached and will remain the same unless the app is reinstalled.
+}).onError((error, stackTrace) {
+  // Handle any exceptions that occurred.
+});
 ```
+&nbsp;  
+
+#### Get params during app opening (Direct Deep Linking)
+
+When the app is already installed on the device, there is no need to download and launch the app again. Instead, we simply open the app and pass the parameters collected.
+
+[//]: # (language="Dart", target="Example")
+```dart
+Mogua.getOpenData(
+  onData: (data) {
+    // Handle the retrieved data.
+  },
+    onError: (error) {
+    // Handle the exception.
+    },
+)
+```
+&nbsp;  
+
+---
+
+#### Remember to configure the URL Scheme in your application.
 
 [//]: # (redundant)
-## Learn More
+A detailed guide is available on the <a href="https://www.mogua.io" target="_blank">**mogua.io**</a> dashboard.
 
-[//]: # (redundant)
-Visit [mogua.io](https://www.mogua.io) to see the details.
+

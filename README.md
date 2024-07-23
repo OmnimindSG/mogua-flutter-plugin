@@ -3,21 +3,35 @@
 
 ## Mogua Flutter Plugin
 
+[//]: # (redundant)
 [![Pub Package](https://img.shields.io/pub/v/mogua.svg)](https://pub.dev/packages/mogua)
 
+[//]: # (redundant)
 Mogua is a web to app parameter passing solution. It allows you to track your app's installations from landing page with a lightweight deferred deep linking SDK.
 
+[//]: # (redundant)
 Try our [live demo](https://www.mogua.io) in 10 seconds!
 
+[//]: # (redundant)
 ---
 
+[//]: # (redundant)
 ### Features
 
-- Track your apps’ installation (Deferred Deep Linking)
-- Track your apps’ opening events (e.g., from URL Scheme, Universal Link, App Links)
-- Pass parameters via deep links
-- Parameter analytics
-- App trending analytics
+[//]: # (redundant)
+✅ Track your apps’ installation (Deferred Deep Linking)
+
+[//]: # (redundant)
+✅ Track your apps’ opening events (e.g., from URL Scheme, Universal Link, App Links)
+
+[//]: # (redundant)
+✅ Pass parameters via deep links
+
+[//]: # (redundant)
+✅ Parameter analytics
+
+[//]: # (redundant)
+✅ App trending analytics
 
 ---
 
@@ -76,11 +90,11 @@ After initialization, you can asynchronously retrieve the parameters passed duri
 [//]: # (language="Dart", target="Example")
 ```dart
 Mogua.getInstallData().then((data) {
-    // data: Parameters passed from the web to the app.
-    // Returns an empty Map if no parameters are provided.
-    // Parameters are cached and will remain the same unless the app is reinstalled.
+  // data: Parameters passed from the web to the app.
+  // Returns an empty Map if no parameters are provided.
+  // Parameters are cached and will remain the same unless the app is reinstalled.
 }).onError((error, stackTrace) {
-    // Handle any exceptions that occurred.
+  // Handle any exceptions that occurred.
 });
 ```
 &nbsp;  
@@ -92,12 +106,12 @@ When the app is already installed on the device, there is no need to download an
 [//]: # (language="Dart", target="Example")
 ```dart
 Mogua.getOpenData(
-    onData: (data) {
-      // Handle the retrieved data.
-    },
-    onError: (error) {
-      // Handle the exception.
-    },
+  onData: (data) {
+    // Handle the retrieved data.
+  },
+  onError: (error) {
+    // Handle the exception.
+  },
 )
 ```
 &nbsp;  

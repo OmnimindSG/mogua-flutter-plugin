@@ -76,11 +76,11 @@ After initialization, you can asynchronously retrieve the parameters passed duri
 [//]: # (language="Dart", target="Example")
 ```dart
 Mogua.getInstallData().then((data) {
-  // data: Parameters passed from the web to the app.
+    // data: Parameters passed from the web to the app.
     // Returns an empty Map if no parameters are provided.
     // Parameters are cached and will remain the same unless the app is reinstalled.
 }).onError((error, stackTrace) {
-  // Handle any exceptions that occurred.
+    // Handle any exceptions that occurred.
 });
 ```
 &nbsp;  
@@ -92,11 +92,11 @@ When the app is already installed on the device, there is no need to download an
 [//]: # (language="Dart", target="Example")
 ```dart
 Mogua.getOpenData(
-  onData: (data) {
-    // Handle the retrieved data.
-  },
+    onData: (data) {
+      // Handle the retrieved data.
+    },
     onError: (error) {
-    // Handle the exception.
+      // Handle the exception.
     },
 )
 ```

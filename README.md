@@ -51,7 +51,7 @@ Alternatively, in the `dependencies:` section of your `pubspec.yaml`, add:
 ```yaml
 dependencies:
   # ...
-  mogua: ^0.8.0
+  mogua: ^1.0.0
 
 ```
 &nbsp;  
@@ -72,7 +72,7 @@ import 'package:mogua/mogua.dart';
 // allowPasteboardAccess: Whether to allow access to the clipboard. Enabling this feature can enhance accuracy, but may trigger permission warnings on certain systems.
 
 Mogua.init(appKey: '${appKey}', allowClipboardAccess: true).then((_) {
-  // You can retrieve data such as channel, referrals, etc.
+	// You can invoke Mogua.getInstallData here.
 });
 ```
 &nbsp;  
@@ -81,7 +81,7 @@ Mogua.init(appKey: '${appKey}', allowClipboardAccess: true).then((_) {
 
 ### Retrieve the params
 
- Before retrieving the params, refer to the **[How to collect params on website](https://www.mogua.io/docs/integration/params-collect)**.
+Before retrieving the params, refer to the **[How to collect params on website](https://www.mogua.io/docs/integration/params-collect)**.
 
 #### Get params during app installation (Deferred Deep Linking)
 

@@ -1,3 +1,8 @@
+## 1.0.0
+
+- Update to mogua-ios-sdk v1.0.0 and mogua-android-sdk v1.0.0.
+- Bug fixed.
+
 ## 0.8.1
 
 - Update documentation.
@@ -14,8 +19,8 @@
   
 ## 0.4.1
 
-- Improve documentation
+- Improve documentation.
 
 ## 0.4.0
 
-- Initial release
+- Initial release.

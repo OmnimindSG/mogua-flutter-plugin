@@ -1,5 +1,5 @@
 #import "MoguaPlugin.h"
-#import "MoguaSDK/MoguaSDK-Swift.h"
+#import "MoguaSDK/MoguaSDK.h"
 
 @implementation MoguaPlugin
 
@@ -54,11 +54,11 @@ NSUserActivity * _pendingUserActivity;
         [self handlePendings];
         result(nil);
     } else if ([@"getInstallData" isEqualToString:call.method]) {
-        [Mogua getInstallDataOnData:^(NSDictionary<NSString *,id> * _Nonnull data) {
+        [Mogua getInstallData:[[MoguaCallback alloc] initWithOnData:^(NSDictionary<NSString *,id> * _Nonnull data) {
             result(data);
         } onError:^(NSError * _Nonnull error) {
             result([FlutterError errorWithCode:[@(error.code) stringValue] message:error.localizedDescription details:nil]);
-        }];
+        }]];
     } else {
         result(FlutterMethodNotImplemented);
     }
@@ -90,11 +90,11 @@ NSUserActivity * _pendingUserActivity;
 }
 
 - (FlutterError *)onListenWithArguments:(id)arguments eventSink:(FlutterEventSink)events {
-    [Mogua getOpenDataOnData:^(NSDictionary<NSString *,id> * _Nonnull data) {
+    [Mogua getOpenData:[[MoguaCallback alloc] initWithOnData:^(NSDictionary<NSString *,id> * _Nonnull data) {
         events(data);
     } onError:^(NSError * _Nonnull error) {
         events([FlutterError errorWithCode:[@(error.code) stringValue] message:error.localizedDescription details:nil]);
-    }];
+    }]];
     _isEventsReady = true;
     [self handlePendings];
     return nil;

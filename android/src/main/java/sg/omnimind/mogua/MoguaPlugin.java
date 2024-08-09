@@ -6,7 +6,7 @@ import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import java.util.HashMap;
+import java.util.Map;
 
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
@@ -54,7 +54,7 @@ public class MoguaPlugin implements FlutterPlugin, EventChannel.StreamHandler, M
     } else if (call.method.equals("getInstallData")) {
       Mogua.getInstallData(new MoguaCallback() {
         @Override
-        public void onData(HashMap<String, Object> data) {
+        public void onData(Map<String, Object> data) {
           result.success(data);
         }
 
@@ -110,7 +110,7 @@ public class MoguaPlugin implements FlutterPlugin, EventChannel.StreamHandler, M
     }
     Mogua.getOpenData(intent, new MoguaCallback() {
       @Override
-      public void onData(HashMap<String, Object> data) {
+      public void onData(Map<String, Object> data) {
         _events.success(data);
       }
 

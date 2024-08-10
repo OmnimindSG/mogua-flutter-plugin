@@ -25,7 +25,8 @@ abstract class MoguaPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<void> init({ required String appKey, required bool allowClipboardAccess }) {
+  Future<void> init(
+      {required String appKey, required bool allowClipboardAccess}) {
     throw UnimplementedError('Method init has not been implemented.');
   }
 
@@ -33,7 +34,9 @@ abstract class MoguaPlatform extends PlatformInterface {
     throw UnimplementedError('Method getData has not been implemented.');
   }
 
-  void getOpenData({ MoguaCallback<Map<String, dynamic>>? onData, MoguaCallback<dynamic>? onError }) {
+  void getOpenData(
+      {MoguaCallback<Map<String, dynamic>>? onData,
+      MoguaCallback<dynamic>? onError}) {
     throw UnimplementedError('Method getData has not been implemented.');
   }
 }

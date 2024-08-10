@@ -11,7 +11,8 @@ class MethodChannelMogua extends MoguaPlatform {
   final eventChannel = const EventChannel('mogua_event');
 
   @override
-  Future<void> init({ required String appKey, bool allowClipboardAccess = true }) {
+  Future<void> init(
+      {required String appKey, bool allowClipboardAccess = true}) {
     final arguments = <String, dynamic>{
       'appKey': appKey,
       'allowClipboardAccess': allowClipboardAccess
@@ -30,7 +31,9 @@ class MethodChannelMogua extends MoguaPlatform {
   }
 
   @override
-  void getOpenData({ MoguaCallback<Map<String, dynamic>>? onData, MoguaCallback<dynamic>? onError }) {
+  void getOpenData(
+      {MoguaCallback<Map<String, dynamic>>? onData,
+      MoguaCallback<dynamic>? onError}) {
     eventChannel.receiveBroadcastStream().listen((event) {
       onData?.call(Map<String, dynamic>.from(event));
     }).onError((error) {
